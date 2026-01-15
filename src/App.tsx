@@ -1,7 +1,6 @@
 import "./App.css";
 import Welcome from "./components/welcome";
 import Header from "./components/Header";
-import Card from "./components/card";
 import Counter from "./components/Counter";
 
 type Teacher = {
@@ -56,10 +55,7 @@ function App() {
             );
           })}
         </div>
-        <div className="flex flex-row gap-9 border-2 border-red-500 ">
-          <Card header="ini heder 1" desc="ini deskripsi 1 jadi inininini" />
-          <Card header="ini heder 2" desc="ini deskripsi 2 jadi inininini" />
-        </div>
+
         <Counter></Counter>
       </div>
     </>
