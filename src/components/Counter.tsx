@@ -1,19 +1,31 @@
-import { useState } from "react"; // use adalah hook di dalam react
+import useCounter from "../hooks/useCounter";
 
 function Counter() {
-  const [count, setCount] = useState(0); //index pertama adalah variabel dan yang kedua adalah funct
-  //   const [nama, setNama] = useState("Najmi");
-  const handelDecrement = () => {
-    setCount(count - 1);
-    // setNama("Adri");
-  };
-  const handelIncrement = () => {
-    setCount(count + 1);
-    // setNama("Faza");
-  };
-
+  const { count, handelDecrement, handelIncrement, handelResetCounter } =
+    useCounter();
   return (
     <div className="flex gap-16 justify-around">
+      <button
+        onClick={handelResetCounter}
+        className="inline-flex items-center gap-2 px-6 py-3 bg-lime-600 text-white font-semibold rounded-lg shadow-md hover:bg-lime-700 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2 transition-all duration-200"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#fffbfb"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          {" "}
+          <path d="M2.5 2v6h6M21.5 22v-6h-6" />
+          <path d="M22 11.5A10 10 0 0 0 3.2 7.2M2 12.5a10 10 0 0 0 18.8 4.2" />
+        </svg>
+        Reset
+      </button>
       <button
         onClick={handelDecrement}
         className="inline-flex items-center gap-2 px-6 py-3 bg-lime-600 text-white font-semibold rounded-lg shadow-md hover:bg-lime-700 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2 transition-all duration-200"
