@@ -2,6 +2,7 @@ import "./App.css";
 import Welcome from "./components/welcome";
 import Header from "./components/Header";
 import Counter from "./components/Counter";
+import LampToggle from "./components/LampToggle";
 
 type Teacher = {
   name: string;
@@ -55,9 +56,9 @@ function App() {
             );
           })}
         </div>
-
         <Counter></Counter>
       </div>
+      <LampToggle></LampToggle>
     </>
   );
 }
