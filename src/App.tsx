@@ -3,7 +3,12 @@ import Welcome from "./components/welcome";
 import Header from "./components/Header";
 import Counter from "./components/Counter";
 import LampToggle from "./components/LampToggle";
-
+import { Route, Routes } from "react-router";
+import TermsPage from "./Pages/TermsPage";
+import { Home } from "lucide-react";
+import HomePages from "./Pages/HomePages";
+import NotFoundPage from "./Pages/NotFoundPage";
+import ProductDetailPage from "./Pages/ProductDetailPage";
 type Teacher = {
   name: string;
   job: string;
@@ -41,24 +46,12 @@ const teachers: Teacher[] = [
 function App() {
   return (
     <>
-      <div className="flex flex-col gap-9 border-2 border-red-500">
-        <Header />
-        <text className="text-9xl font-bold">Hallo World</text>
-        <div className="flex flex-row gap-9 border-2 border-red-500">
-          {teachers.map((teacher) => {
-            return (
-              <Welcome
-                name={teacher.name}
-                job={teacher.job}
-                year={teacher.year}
-                key={teacher.id}
-              />
-            );
-          })}
-        </div>
-        <Counter></Counter>
-      </div>
-      <LampToggle></LampToggle>
+      <Routes>
+        <Route path="/terms" element={<TermsPage />} />
+        <Route path="/" element={<HomePages />} />
+        <Route path="/product/:productSlug" element={<ProductDetailPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
     </>
   );
 }
