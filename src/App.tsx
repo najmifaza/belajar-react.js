@@ -9,6 +9,7 @@ import { Home } from "lucide-react";
 import HomePages from "./Pages/HomePages";
 import NotFoundPage from "./Pages/NotFoundPage";
 import ProductDetailPage from "./Pages/ProductDetailPage";
+import ProductListPage from "./Pages/ProductListPage";
 type Teacher = {
   name: string;
   job: string;
@@ -47,8 +48,9 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/terms" element={<TermsPage />} />
         <Route path="/" element={<HomePages />} />
+        <Route path="/terms" element={<TermsPage />} />
+        <Route path="/product-list" element={<ProductListPage />} />
         <Route path="/product/:productSlug" element={<ProductDetailPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
